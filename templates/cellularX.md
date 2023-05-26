@@ -1,69 +1,24 @@
-# Dataset Name (Acronym)
-Write a short summary describing your dataset (limit
-200 words). Include information about the content
-and topic of the data, sources and motivations for the
-dataset, benefits and the problems or use cases it is
-suitable for.
+# User-level network experience in wireless cellular networks (CellularX)
+CellularX, a novel large-scale dataset concentrating on user-level network e**X**perience in **cellular** networks. This work addresses the scarcity of public datasets in Information and Communications Technology (ICT) systems research. To the best of our knowledge, CellularX is the first dataset that focuses on user-level experience in radio access networks. CellularX provides two subdatasets: CellularXreal, with real-time multidimensional Key Performance Indicator (KPI) data from 37,947 users, and CellularXsim, which contains both real-world and simulated user-level KPI data.
+
+The potential applications of CellularX include: 
+- **Digital twin for 5G/6G Radio Access Networks (RAN)**: CellularX provides large-scale real-world KPI data that can be used to build a digital twin for RAN. The digital twin can simulate and preview unpredictable or costly operations in the real world, such as network optimization, predictive maintenance, capacity planning, disaster recovery, and evaluation of network security policies in ICT Operations and Maintenance (O\&M).
+- **Simulation-to-Real (sim2real) study**: CellularX provides a real/simulated comparison case to help researchers understand the reality gap in user-level RAN scenarios and facilitate efficient knowledge transfer from simulated data to real scenarios.
 
 #### Dataset Link
 <!-- info: Provide a link to the dataset: -->
 <!-- width: half -->
 Dataset Link
 
-#### Data Card Author(s)
-<!-- info: Select **one role per** Data Card Author:
-
-(Usage Note: Select the most appropriate choice to describe the author's role
-in creating the Data Card.) -->
-<!-- width: half -->
-- **Name, Team:** (Owner / Contributor / Manager)
-- **Name, Team:** (Owner / Contributor / Manager)
-- **Name, Team:** (Owner / Contributor / Manager)
 
 ## Authorship
-### Publishers
-#### Publishing Organization(s)
-<!-- scope: telescope -->
-<!-- info: Provide the names of the institution or organization responsible
-for publishing the dataset: -->
-Organization Name
-
-#### Industry Type(s)
-<!-- scope: periscope -->
-<!-- info: Select **all applicable** industry types to which the publishing
-organizations belong: -->
-- Corporate - Tech
-- Corporate - Non-Tech (please specify)
-- Academic - Tech
-- Academic - Non-Tech (please specify)
-- Not-for-profit - Tech
-- Not-for-profit - Non-Tech (please specify)
-- Individual (please specify)
-- Others (please specify)
-
-#### Contact Detail(s)
-<!-- scope: microscope -->
-<!-- info: Provide publisher contact details: -->
-- **Publishing POC:** Provide the name for a POC for this dataset's publishers
-- **Affiliation:** Provide the POC's institutional affiliation
-- **Contact:** Provide the POC's contact details
-- **Mailing List:** Provide a mailing list if available
-- **Website:** Provide a website for the dataset if available
 
 ### Dataset Owners
 #### Team(s)
 <!-- scope: telescope -->
 <!-- info: Provide the names of the groups or team(s) that own the dataset: -->
-Name of Group or Team
+DNA Lab. Tongji University, Shanghai, China.
 
-#### Contact Detail(s)
-<!-- scope: periscope -->
-<!-- info: Provide pathways to contact dataset owners: -->
-- **Dataset Owner(s):** Provide the names of the dataset owners
-- **Affiliation:** Provide the affiliation of the dataset owners
-- **Contact:** Provide the email of the dataset owner
-- **Group Email:** Provide a link to the mailing-list@server.com for the dataset owner team
-- **Website:** Provide a link to the website for the dataset owner team
 
 #### Author(s)
 <!-- scope: microscope -->
@@ -71,10 +26,9 @@ Name of Group or Team
 
 (Usage Note: Provide the affiliation and year if different from publishing
 institutions or multiple affiliations.) -->
-- Name, Title, Affiliation, YYYY
-- Name, Title, Affiliation, YYYY
-- Name, Title, Affiliation, YYYY
-- Name, Title, Affiliation, YYYY
+- Shaoyu Dou, Ph.D. Student, Tongji University
+- Kai Yang, Professor, Tongji University
+- Xiangmin Zou, Ph.D. Student, Tongji University
 
 ### Funding Sources
 #### Institution(s)
@@ -104,14 +58,9 @@ Summarize here. Link to documents if available.
 #### Data Subject(s)
 <!-- scope: telescope -->
 <!-- info: Select ***all applicable**** subjects contained the dataset: -->
-- Sensitive Data about people
 - Non-Sensitive Data about people
-- Data about natural phenomena
-- Data about places and objects
 - Synthetically generated data
 - Data about systems or products and their behaviors
-- Unknown
-- Others (Please specify)
 
 #### Dataset Snapshot
 <!-- scope: periscope -->
@@ -120,70 +69,26 @@ to include relevant information, considerations, and links to table(s) with
 more detailed breakdowns.) -->
 Category | Data
 --- | ---
-Size of Dataset | 123456 MB
-Number of Instances | 123456
-Number of Fields | 123456
-Labeled Classes | 123456
-Number of Labels | 123456789
-Average Labeles Per Instance | 123456
-Algorithmic Labels | 123456789
-Human Labels | 123456789
-Other Characteristics | 123456
+Dataset Name | CellularXreal, CellularXsim
+Size of Dataset | x MB, 2.0 MB
+Number of Instances | xxx, ~18,000
 
-**Above:** Provide a caption for the above table of visualization.
 
-**Additional Notes:** Add here.
+**Above:** Summary of CellularX dataset
 
 #### Content Description
 <!-- scope: microscope -->
 <!-- info: Provide a short description of the content in a data point: -->
-Summarize here. Include links if available.
+- **CellularXreal** dataset consists of two part:  multidimensional KPI data and cellular information. Each KPI record corresponds to a sampling **time** and a sampling **cell**. The data contains a significant number of missing values since not all indicators are reported for each access. The KPIs include: **uplink and downlink user experience rate, block error rate, the number of resource blocks, as well as RSRP of the service cell and uplink SINR**. The cellular information in CellularX dataset contains the **latitude and longitude** of cells, the **type of cellular** (indoor or outdoor cellular with different azimuth) and **average RSRP** reported by users.
 
-**Additional Notes:** Add here.
+- **CellularXsim** provides **real-world KPI** data generated by user equipment while moving along four manually designed paths, as well as corresponding **simulated data** generated with six simulator configuations along the same routes. CellularXsim also includes a set of real-world data generated by randomly roaming within the study area. **Simulator configuations** and **base station infomation** are provided. Four KPI metrics are recorded, that are **RSSI, SINR, RSRP, and RSRQ**.
 
-#### Descriptive Statistics
-<!-- width: full -->
-<!-- info: Provide basic descriptive statistics for each field.
-
-Use additional notes to capture any other relevant information or
-considerations.
-
-Usage Note: Some statistics will be relevant for numeric data, for not for
-strings. -->
-
-Statistic | Field Name | Field Name | Field Name | Field Name | Field Name | Field Name
---- | --- | --- | --- | --- | --- | ---
-count |
-mean |
-std |
-min |
-25% |
-50% |
-75% |
-max |
-mode |
-
-**Above:** Provide a caption for the above table or visualization.
-
-**Additional Notes:** Add here.
 
 ### Sensitivity of Data
 #### Sensitivity Type(s)
 <!-- scope: telescope -->
 <!-- info: Select ***all applicable*** data types present in the dataset: -->
-- User Content
-- User Metadata
-- User Activity Data
-- Identifiable Data
-- S/PII
-- Business Data
-- Employee Data
-- Pseudonymous Data
 - Anonymous Data
-- Health Data
-- Children’s Data
-- None
-- Others (Please specify)
 
 #### Field(s) with Sensitive Data
 <!-- scope: periscope -->
@@ -192,16 +97,13 @@ collection was intentional or unintentional.
 
 Use additional notes to capture any other relevant information or
 considerations. -->
+
 **Intentional Collected Sensitive Data**
 
 (S/PII were collected as a part of the
 dataset creation process.)
 
-Field Name | Description
---- | ---
-Field Name | Type of S/PII
-Field Name | Type of S/PII
-Field Name | Type of S/PII
+No sensitive data was intentionally collected.
 
 **Unintentionally Collected Sensitive Data**
 
@@ -210,188 +112,43 @@ part of the dataset creation process but
 can be inferred using additional
 methods.)
 
-Field Name | Description
---- | ---
-Field Name | Type of S/PII
-Field Name | Type of S/PII
-Field Name | Type of S/PII
+All user devices involved in the data set have been anonymized, and the data set only collected data from base stations in a part of the city block, so any user's behavior and identity cannot be inferred using any additional methods.
 
-**Additional Notes:** Add here
-
-#### Security and Privacy Handling
-<!-- scope: microscope -->
-<!-- info: Summarize the measures or steps to handle sensitive data in this
-dataset.
-
-Use additional notes to capture any other relevant information or
-considerations. -->
-
-Summarize here. Include links and metrics where applicable.
-
-**Method:** description
-
-**Method:** description
-
-**Method:** description
-
-**Additional Notes:** Add here
-
-#### Risk Type(s)
-<!-- scope: telescope -->
-<!-- info: Select **all applicable** risk types presenting from the
-dataset: -->
-- Direct Risk
-- Indirect Risk
-- Residual Risk
-- No Known Risks
-- Others (Please Specify)
-
-#### Supplemental Link(s)
-<!-- scope: periscope -->
-<!-- info: Provide link(s) for documentation pertaining to sensitive data in
-the dataset: -->
-**Link Name or Document Type:** link
-
-**Link Name or Document Type:** link
-
-**Link Name or Document Type:** link
-
-#### Risk(s) and Mitigation(s)
-<!-- scope: microscope -->
-<!-- info: Summarize the steps taken to identify and mitigate risks from PII
-or sensitive information.
-
-Use additional notes to capture any other relevant information or
-considerations. -->
-Summarize here. Include links and metrics where applicable.
-
-**Risk type:** Description + Mitigations
-
-**Risk type:** Description + Mitigations
-
-**Risk type:** Description + Mitigations
-
-**Additional Notes:** Add here
 
 ### Dataset Version and Maintenance
 #### Maintenance Status
 <!-- scope: telescope -->
 <!-- info: Select **one:** -->
-**Regularly Updated** - New versions of the dataset
-have been or will continue to be
-made available.
-
-**Actively Maintained** - No new versions will be made
-available, but this dataset will
-be actively maintained,
-including but not limited to
-updates to the data.
-
-**Limited Maintenance** - The data will not be updated,
-but any technical issues will be
-addressed.
-
-**Deprecated** - This dataset is obsolete or is
-no longer being maintained.
+**Limited Maintenance** - The data will not be updated, but any technical issues will be addressed.
 
 #### Version Details
 <!-- scope: periscope -->
 <!-- info: Provide details about **this** version of the dataset: -->
 **Current Version:** 1.0
 
-**Last Updated:** MM/YYYY
+**Last Updated:** 06/2023
 
-**Release Date:** MM/YYYY
+**Release Date:** N/A
 
 #### Maintenance Plan
 <!-- scope: microscope -->
 <!-- info: Summarize the maintenance plan for the dataset:
 
-Use additional notes to capture any other relevant information or
-considerations. -->
-Summarize here. Include links and metrics where applicable.
+CellularX is collected in real world at one time for academic purposes, and
+maintenance will be limited.
 
-**Versioning:** Summarize here. Include information about criteria for
-versioning the dataset.
+**Feedback:** For feedback, reach out to shaoyu@tongji.edu.cn.
 
-**Updates:** Summarize here. Include information about criteria for refreshing
-or updating the dataset.
+<!-- ----------------------------------------------------------------- -->
 
-**Errors:** Summarize here. Include information about criteria for refreshing
-or updating the dataset.
-
-**Feedback:** Summarize here. Include information about criteria for refreshing
-or updating the dataset.
-
-**Additional Notes:** Add here
-
-#### Next Planned Update(s)
-<!-- scope: periscope -->
-<!-- info: Provide details about the next planned update: -->
-**Version affected:** 1.0
-
-**Next data update:** MM/YYYY
-
-**Next version:** 1.1
-
-**Next version update:** MM/YYYY
-
-#### Expected Change(s)
-<!-- scope: microscope -->
-<!-- info: Summarize the updates to the dataset and/or data that are expected
-on the next update.
-
-Use additional notes to capture any other relevant information or
-considerations. -->
-**Updates to Data:** Summarize here. Include links, charts, and visualizations
-as appropriate.
-
-**Updates to Dataset:** Summarize here. Include links, charts, and
-visualizations as appropriate.
-
-**Additional Notes:** Add here
 
 ## Example of Data Points
 #### Primary Data Modality
 <!-- scope: telescope -->
 <!-- info: Select **one**: -->
-- Image Data
-- Text Data
-- Tabular Data
-- Audio Data
-- Video Data
 - Time Series
-- Graph Data
 - Geospatial Data
-- Multimodel (please specify)
-- Unknown
-- Others (please specify)
 
-#### Sampling of Data Points
-<!-- scope: periscope -->
-<!-- info: Provide link(s) to data points or exploratory demos: -->
-- Demo Link
-- Typical Data Point Link
-- Outlier Data Point Link
-- Other Data Point Link
-- Other Data Point Link
-
-#### Data Fields
-<!-- scope: microscope -->
-<!-- info: List the fields in data points and their descriptions.
-
-(Usage Note: Describe each field in a data point. Optionally use this to show
-the example.) -->
-
-Field Name | Field Value | Description
---- | --- | ---
-Field Name | Field Value | Description
-Field Name | Field Value | Description
-Field Name | Field Value | Description
-
-**Above:** Provide a caption for the above table or visualization if used.
-
-**Additional Notes:** Add here
 
 #### Typical Data Point
 <!-- width: half -->
