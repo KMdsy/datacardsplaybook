@@ -132,8 +132,7 @@ All user devices involved in the data set have been anonymized, and the data set
 
 #### Maintenance Plan
 <!-- scope: microscope -->
-<!-- info: Summarize the maintenance plan for the dataset:
-
+<!-- info: Summarize the maintenance plan for the dataset: -->
 CellularX is collected in real world at one time for academic purposes, and
 maintenance will be limited.
 
