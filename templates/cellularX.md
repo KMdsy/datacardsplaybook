@@ -100,17 +100,9 @@ considerations. -->
 
 **Intentional Collected Sensitive Data**
 
-(S/PII were collected as a part of the
-dataset creation process.)
-
 No sensitive data was intentionally collected.
 
 **Unintentionally Collected Sensitive Data**
-
-(S/PII were not explicitly collected as a
-part of the dataset creation process but
-can be inferred using additional
-methods.)
 
 All user devices involved in the data set have been anonymized, and the data set only collected data from base stations in a part of the city block, so any user's behavior and identity cannot be inferred using any additional methods.
 
@@ -138,7 +130,6 @@ maintenance will be limited.
 
 **Feedback:** For feedback, reach out to shaoyu@tongji.edu.cn.
 
-<!-- ----------------------------------------------------------------- -->
 
 
 ## Example of Data Points
@@ -156,66 +147,114 @@ it typical.
 
 **Use additional notes to capture any other relevant information or
 considerations.** -->
-Summarize here. Include any criteria for typicality of data point.
 
-```
-{'q_id': '8houtx',
-  'title': 'Why does water heated to room temperature feel colder than the air around it?',
-  'selftext': '',
-  'document': '',
-  'subreddit': 'explainlikeimfive',
-  'answers': {'a_id': ['dylcnfk', 'dylcj49'],
-  'text': ["Water transfers heat more efficiently than air. When something feels cold it's because heat is being transferred from your skin to whatever you're touching. ... Get out of the water and have a breeze blow on you while you're wet, all of the water starts evaporating, pulling even more heat from you."],
-  'score': [5, 2]},
-  'title_urls': {'url': []},
-  'selftext_urls': {'url': []},
-  'answers_urls': {'url': []}}
-```
+Below are examples of kind data in the cellularX dataset.
+- Time series data in cellularXreal dataset, containing missing value.
+<img width="1072" alt="image" src="https://github.com/KMdsy/datacardsplaybook/assets/16149619/969b0765-2b17-47e2-9917-76c2189f84aa">
 
-**Additional Notes:** Add here
+- Geospatial data in cellularXreal dataset
+<img width="499" alt="image" src="https://github.com/KMdsy/datacardsplaybook/assets/16149619/0140af61-200a-4463-abb2-c232f62f8c15">
 
-#### Atypical Data Point
-<!-- width: half -->
-<!-- info: Provide an example of an outlier data point and describe what makes
-it atypical.
+- Simulated time series data in cellularXsim dataset.
+<img width="1383" alt="image" src="https://github.com/KMdsy/datacardsplaybook/assets/16149619/9fab6479-d6b1-4c2a-b428-77bb97aa73f7">
 
-**Use additional notes to capture any other relevant information or
-considerations.** -->
-Summarize here. Include any criteria for atypicality of data point.
+- Collected time series data in cellularXsim dataset.
+<img width="1053" alt="image" src="https://github.com/KMdsy/datacardsplaybook/assets/16149619/8aa17b0e-89de-44c0-a310-cb8543e50bf1">
 
-```
-{'q_id': '8houtx',
-  'title': 'Why does water heated to room temperature feel colder than the air around it?',
-  'selftext': '',
-  'document': '',
-  'subreddit': 'explainlikeimfive',
-  'answers': {'a_id': ['dylcnfk', 'dylcj49'],
-  'text': ["Water transfers heat more efficiently than air. When something feels cold it's because heat is being transferred from your skin to whatever you're touching. ... Get out of the water and have a breeze blow on you while you're wet, all of the water starts evaporating, pulling even more heat from you."],
-  'score': [5, 2]},
-  'title_urls': {'url': []},
-  'selftext_urls': {'url': []},
-  'answers_urls': {'url': []}}
-```
+- Geospatial data in cellularXsim dataset
+<img width="971" alt="image" src="https://github.com/KMdsy/datacardsplaybook/assets/16149619/d37f965d-ebbc-455a-9cba-d188f5993a78">
 
-**Additional Notes:** Add here
+
+
+## Data Fields
+
+### CellularXreal dataset
+
+#### Time Series Data
+ 
+| KPI Name |               Description              | Unit |   Type  |
+|:--------:|:--------------------------------------:|:----:|:-------:|
+|   RSRP   | RSRP of service cell                   |  dBm | Integer |
+|  ULThrp  | Uplink experience rate                 | Mbps |  Float  |
+|  DLThrp  | Downlink experience rate               | Mbps |  Float  |
+| DLPrbNum | The number of downlink resource blocks |   /  | Integer |
+| ULPrbNum | The number of uplink resource blocks   |   /  | Integer |
+|  DLBLER  | Downlink block error rate              |   %  |  Float  |
+|  ULBLER  | Uplink block error rate                |   %  |  Float  |
+|  ULSINR  | Uplink SINR                            |  dB  |  Float  |
+
+#### Geospatial Data
+
+
+| KPI Name      | Description                             | Unit | Type   |
+|---------------|-----------------------------------------|------|--------|
+| Cell ID       | ID of cellular                          | /    | String |
+| Average RSRP  | Average of Service Cell RSRP            | dBm  | Float  |
+| lon           | Longitude of the cell                   | /    | Float  |
+| lat           | Latitude of the cell                    | /    | Float  |
+| azimuth       | Azimuth of outdoor cell, or indoor cell | /    | String |
+
+### CellularXsim dataset
+
+#### Simulated Time Series Data
+
+| KPI Name                           | Description                                                   | Unit | Type    |
+|------------------------------------|---------------------------------------------------------------|------|---------|
+| # Receiver Point (#)               | Index of sample point in the path                             | /    | Integer |
+| X(m)                               | Coordinates of sampling points                                | m    | Float   |
+| Y(m)                               | Coordinates of sampling points                                | m    | Float   |
+| Z(m)                               | Coordinates of sampling points                                | m    | Float   |
+| Distance (m)                       | The distance from the sampling point to the start of the path | m    | Float   |
+| Strongest Power (dBm)              | Maximum signal power at sampling point                        | dBm  | Float   |
+| Total Power With Phase (dBm)       | The total power at the sampling point                         | dBm  | Float   |
+| Best SINR (dB)                     | Best SINR at sampling point                                   | dB   | Float   |
+| RSSI (dBm)                         | Reference Singal Strength Indicator                           | dBm  | Float   |
+| RSRP (dBm)                         | Reference Singal Receiving Power                              | dBm  | Float   |
+| RSRQ (dB)                          | Reference Signal Receiving Quality                            | dB   | Float   |
+| Strongest power transmitter (Tx #) | Base station index with maximum power                         | /    | Integer |
+
+#### Collected Time Series Data 
+
+| KPI Name  | Description                                    | Unit | Type    |
+|-----------|------------------------------------------------|------|---------|
+| LATITUDE  | Longitude of the sample point                  | /    | Float   |
+| LONGITUDE | Latitude of the sample point                   | /    | Float   |
+| TYPE      | Type of cell                                   | /    | String  |
+| TAC       | Tracking Area Code                             | /    | Integer |
+| PCI       | Physical Cell Identifier                       | /    | Integer |
+| ECI       | E-UTRAN Cell Identifier                        | /    | Integer |
+| EARFCN    | E-UTRA Absolute Radio Frequency Channel Number | /    | Integer |
+| RSSI      | Received Signal Strength Indicator             | dBm  | Float   |
+| RSRP      | Reference Singal Receiving Power               | dBm  | Float   |
+| RSRQ      | Reference Signal Receiving Quality             | dB   | Float   |
+| SINR      | Signal to Interference plus Noise Ratio        | /    | Float   |
+
+#### Geospatial Data
+
+| KPI Name           | Description                                        | Unit | Type    |
+|--------------------|----------------------------------------------------|------|---------|
+| cell(ECI)          | E-UTRAN Cell Identifier                            | /    | Integer |
+| lat                | Longitude of the cell                              | /    | Float   |
+| lon                | Latitude of the cell                               | /    | Float   |
+| radius             | Positioning error radius                           | m    | Integer |
+| address            | Address of cell                                    | /    | String  |
+| BSIndexInSimulator | Index of base station in Wireless Insite simulator | /    | Integer |
+| BSNameInSimulator  | Name of base station in Wireless Insite simulator  | /    | Integer |
+
 
 ## Motivations & Intentions
 ### Motivations
 #### Purpose(s)
 <!-- scope: telescope -->
 <!-- info: Select **one**: -->
-- Monitoring
 - Research
-- Production
-- Others (please specify)
 
 #### Domain(s) of Application
 <!-- scope: periscope -->
 <!-- info: Provide a list of key domains of application that the dataset has
 been designed for:<br><br>(Usage Note: Use comma-separated keywords.) -->
 For example: `Machine Learning`, `Computer Vision`, `Object Detection`.
-
-`keyword`, `keyword`, `keyword`
+`Prediction`, `Anomaly Detection`, `Operation and Maintenance`
 
 #### Motivating Factor(s)
 <!-- scope: microscope -->
@@ -223,23 +262,22 @@ For example: `Machine Learning`, `Computer Vision`, `Object Detection`.
 
 (Usage Note: use this to describe the problem space and corresponding
 motivations for the dataset.) -->
-For example:
 
-- Bringing demographic diversity to imagery training data for object-detection models
-- Encouraging academics to take on second-order challenges of cultural representation in object detection
+- Encourages fair comparisons between methods and contributes to the healthy development of the research community.
+- Bringing User Experience to the Forefront: By focusing on user-level network experience, the CellularX dataset aims to shift the focus from base station performance to user experience. This could encourage academics and industry practitioners to consider the end-user perspective more closely in their work, leading to improvements in user experience.
+- Encouraging Scenario-Diverse Model Development: By providing both real-world and simulated data, the CellularX dataset encourages researchers and practitioners to develop and test models under a wide range of network conditions. This could lead to the creation of more robust and adaptive models, contributing to the overall improvement of wireless cellular network performance.
 
-Summarize motivation here. Include links where relevant.
+
 
 ### Intended Use
 #### Dataset Use(s)
 <!-- scope: telescope -->
 <!-- info: Select **one**: -->
-- Safe for production use
 - Safe for research use
-- Conditional use - some unsafe applications
-- Only approved use
-- Others (please specify)
 
+
+
+<!-- ----------------------------------------------------->
 #### Suitable Use Case(s)
 <!-- scope: periscope -->
 <!-- info: Summarize known suitable and intended use cases of this dataset.
